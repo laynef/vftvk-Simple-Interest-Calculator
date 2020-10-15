@@ -12,6 +12,11 @@ function compute()
     var t = Number(document.getElementById("years").value);
     var total = p * r * t;
 
+    if (p <= 0) {
+        alert('Enter a positive integer for principal');
+        return;
+    }
+
     var date = new Date();
     var y = date.getFullYear() + t;
     
