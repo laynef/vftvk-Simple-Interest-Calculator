@@ -12,7 +12,7 @@ function compute()
     var t = Number(document.getElementById("years").value);
     var total = p * r * t;
 
-    if (p <= 0) {
+    if (!p || p <= 0) {
         alert('Enter a positive integer for principal');
         return;
     }
@@ -22,14 +22,12 @@ function compute()
     
     var results = document.getElementById('result');
     results.appendChild(
-        createElementFromHTML(`
-            <p>
-                If you deposit ${p}<br>
-                at an interest rate of ${r}%.<br>
-                You will receive an amount of ${total}<br>
-                in year ${y}
-            </p>
-        `)
+        createElementFromHTML(
+            "<p>If you deposit " + 
+            p + " <br> at an interest rate of " + 
+            r + " %.<br> You will receive an amount of " + 
+            total + " <br> in year " + y + " </p>"
+        )
     )
 }
 
