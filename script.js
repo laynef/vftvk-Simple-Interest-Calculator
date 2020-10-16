@@ -1,10 +1,13 @@
-function createElementFromHTML(htmlString) {
-    var div = document.createElement('div');
+// Utils
+function createElementFromHTML(htmlString) 
+{
+    var div = document.createElement("div");
     div.innerHTML = htmlString.trim();
     return div.firstChild; 
 }
 
 
+// On click handler
 function compute()
 {
     var p = Number(document.getElementById("principal").value);
@@ -13,14 +16,14 @@ function compute()
     var total = p * r * t;
 
     if (!p || p <= 0) {
-        alert('Enter a positive integer for principal');
+        alert("Enter a positive integer for principal");
         return;
     }
 
     var date = new Date();
     var y = date.getFullYear() + t;
     
-    var results = document.getElementById('result');
+    var results = document.getElementById("result");
     results.appendChild(
         createElementFromHTML(
             "<p>If you deposit " + 
@@ -31,6 +34,8 @@ function compute()
     )
 }
 
+
+// Render value in range input
 var output = document.getElementById("rate-output");
 var slider = document.getElementById("rate");
 
